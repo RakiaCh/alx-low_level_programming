@@ -16,7 +16,7 @@ int main(void)
 	{
 		for (ones = '0'; ones <= '9'; ones++)
 		{
-		 	for (x = tens; x <= '9'; x++) /*print second of pair*/
+			for (x = tens; x <= '9'; x++) /*print second of pair*/
 			{
 				for (o = ones + 1; o <= '9'; o++)
 				{
