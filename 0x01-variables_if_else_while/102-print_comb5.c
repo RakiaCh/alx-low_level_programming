@@ -18,13 +18,13 @@ int main(void)
 		{
 			for (x = tens; x <= '9'; x++) /*print second of pair*/
 			{
-				for (o = ones ; o <= '9'; o++)
+				for (o = ones + 1 ; o <= '9'; o++)
 				{
 					putchar(tens);
 					putchar(ones);
 					putchar(' ');
 					putchar(x);
-					putchar(o+1);
+					putchar(o);
 
 					if (!((tens == '9' && ones == '8') &&
 					      (x == '9' && o == '9')))
