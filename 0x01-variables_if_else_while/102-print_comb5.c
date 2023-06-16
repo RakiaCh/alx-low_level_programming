@@ -24,7 +24,7 @@ int main(void)
 					putchar(ones);
 					putchar(' ');
 					putchar(x);
-					putchar(o);
+					putchar(o+1);
 
 					if (!((tens == '9' && ones == '8') &&
 					      (x == '9' && o == '9')))
