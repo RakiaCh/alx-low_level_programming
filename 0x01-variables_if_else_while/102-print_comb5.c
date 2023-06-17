@@ -20,15 +20,14 @@ int main(void)
 			{
 				for (o = ones + 1 ; o <= '9'; o++)
 				{
-					putchar(tens);
-					putchar(ones);
+					putchar(tens + ones);
 					putchar(' ');
-					putchar(t);
-					putchar(o);
+					putchar(t + o);
 
 					if (!((tens == '9' && ones == '9') &&
 					      (t == '9' && o == '9')))
 					{
+						putchar(tens + ones + ' ' + t + '0');
 						putchar(',');
 						putchar(' ');
 					}
