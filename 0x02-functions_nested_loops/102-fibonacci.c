@@ -18,8 +18,8 @@ int main(void)
 		b += a;
 		i++;
 	}
-	
-	printf("%li, %li ", a, b);
+
+	printf("%li, %li", a, b);
 
 	printf("\n");
 
