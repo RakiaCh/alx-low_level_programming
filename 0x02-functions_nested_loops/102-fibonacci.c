@@ -18,9 +18,8 @@ int main(void)
 		b += a;
 		i++;
 	}
-
-	if (i == 50)
-		printf("%li, %li ", a, b);
+	
+	printf("%li, %li ", a, b);
 
 	printf("\n");
 
