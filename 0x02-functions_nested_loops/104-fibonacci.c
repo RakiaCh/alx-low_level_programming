@@ -13,13 +13,13 @@ int main(void)
 
 	while (i < (98 / 2))
 	{
-		printf("%li, %li, ", a, b);
+		printf("%lu, %lu, ", a, b);
 		a += b;
 		b += a;
 		i++;
 	}
 
-	printf("%li, %li", a, b);
+	printf("%lu, %lu", a, b);
 
 	printf("\n");
 
