@@ -8,8 +8,8 @@
 int main(void)
 {
 	int i = 1;
-	long a = 1;
-	long b = 2;
+	unsigned long a = 1;
+	unsigned long b = 2;
 
 	while (i < (98 / 2))
 	{
