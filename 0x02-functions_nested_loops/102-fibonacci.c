@@ -11,9 +11,9 @@ int main(void)
 	long a = 1;
 	long b = 2;
 
-	while (i <= 50)
+	while (i <= (50/2))
 	{
-		printf("%li %li ", a, b);
+		printf("%li, %li, ", a, b);
 		a += b;
 		b += a;
 		i++;
