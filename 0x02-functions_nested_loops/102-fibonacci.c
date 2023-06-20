@@ -11,13 +11,16 @@ int main(void)
 	long a = 1;
 	long b = 2;
 
-	while (i <= (50/2))
+	while (i <= (50 / 2))
 	{
 		printf("%li, %li, ", a, b);
 		a += b;
 		b += a;
 		i++;
 	}
+
+	if (50 % 2 == 1)
+		printf("%li", a);
 
 	printf("\n");
 
