@@ -13,5 +13,12 @@ int _isdigit(int c)
 
 	r = isdigit(c);
 
-	return (r);
+	if (r == 0)
+	{
+		return (0);
+	}
+	else
+	{
+		return (1);
+	}
 }
