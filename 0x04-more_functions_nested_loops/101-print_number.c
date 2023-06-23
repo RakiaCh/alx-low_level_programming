@@ -5,31 +5,22 @@
  * @n: number to be printed
  */
 
-void print_number(int n)
-{
-	if (n == 0)
-	{
-		_putchar('0');
-	}
+void print_number(int n) {
+    if (n < 0) {
+        _putchar('-');
+        n = -n;
+    }
 
-	if (n < 0)
-	{
-		_putchar('-');
-		n = -n;
-	}
+    int divisor = 1;
+    while (divisor <= n / 10) {
+        divisor *= 10;
+    }
 
-	int reversed = 0;
-
-	while (n > 0)
-	{
-		reversed = reversed * 10 + (n % 10);
-		n /= 10;
-	}
-
-	while (reversed > 0)
-	{
-		_putchar('0' + (reversed % 10));
-		reversed /= 10;
-	}
+    while (divisor > 0) {
+        int digit = n / divisor;
+        _putchar('0' + digit);
+        n %= divisor;
+        divisor /= 10;
+    }
 }
 
