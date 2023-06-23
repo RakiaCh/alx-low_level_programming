@@ -7,19 +7,19 @@
 
 int main(void)
 {
-	unsigned long number = 612852475143;
-	unsigned long primeFactor = 2;
+	unsigned long num = 612852475143;
+	unsigned long divisor = 2;
 
-	while (primeFactor < number)
+	while (divisor < num)
 	{
-		if (number % primeFactor == 0)
+		if (num % divisor == 0)
 		{
-			number /= primeFactor;
-			primeFactor = 2;
+			num /= divisor;
+			divisor = 2;
 		}
 		else
-			PrimeFactor++;
+			divisor++;
 	}
-	printf("%lu\n", number );
+	printf("%lu\n", num);
 	return (0);
 }
