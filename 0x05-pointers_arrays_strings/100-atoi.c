@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdlib.h>
+#include <stdbool.h>
 
 /**
  * _atoi - a function that convert a string to an integer
