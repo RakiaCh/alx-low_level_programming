@@ -7,18 +7,17 @@ int main(void)
 {
 	int i;
 	int randomIndex;
-	int passwordLength = 10;
-	char password[passwordLength + 1];
+	char password[] = 11;
 	const char validChars[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	srand(time(NULL));
 
-	for (i = 0; i < passwordLength; i++)
+	for (i = 0; i < 10; i++)
 	{
 		randomIndex = rand() % (sizeof(validChars) - 1);
 		password[i] = validChars[randomIndex];
 	}
 	
-	password[passwordLength] = '\0';
+	password[10] = '\0';
 	
 	return 0;
 }
