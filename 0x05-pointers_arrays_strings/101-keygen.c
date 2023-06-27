@@ -7,7 +7,6 @@ int main(void)
 {
 	int i;
 	int randomIndex;
-	char a[11];
 	const char validChars[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	srand(time(NULL));
 
