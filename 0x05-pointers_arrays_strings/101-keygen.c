@@ -14,10 +14,10 @@ int main(void)
 	for (i = 0; i < 10; i++)
 	{
 		randomIndex = rand() % (sizeof(validChars) - 1);
-		a[i] = validChars[randomIndex];
+		putchar(validChars[randomIndex]);
 	}
-	
-	a[10] = '\0';
+
+	putchar('\n');
 	
 	return 0;
 }
