@@ -1,39 +1,28 @@
 #include "main.h"
-#include <stdbool.h>
 
 /**
- * _atoi - a function that convert a string to an integer
- * @s: the string
- * Return: the number if exists, otherwise return 0
+ * _atoi - Converts a string to an integer.
+ * @s: The string to be converted.
+ *
+ * Return: The integer value of the converted string.
  */
-
 int _atoi(char *s)
 {
+
 	int sign = 1;
-	int result = 0;
-	int i = 0;
-	int digit = 0;
+	unsigned int num = 0;
 
-	while (s[i] == ' ' || s[i] == '-' || s[i] == '+')
-	{
-		if (s[i] == '-')
+	do {
+		if (*s == '-')
 			sign *= -1;
-		i++;
-	}
 
-	while (s[i] != '\0')
-	{
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			result = result * 10 + (s[i] - '0');
-			digit = 1;
-		}
-		else if (digit)
-		{
+		else if (*s >= '0' && *s <= '9')
+			num = (num * 10) + (*s - '0');
+
+		else if (num > 0)
 			break;
-		}
-		i++;
-	}
 
-	return (sign * result);
+	} while (*s++);
+
+	return (num * sign);
 }
