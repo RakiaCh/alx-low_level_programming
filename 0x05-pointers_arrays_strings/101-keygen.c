@@ -7,7 +7,7 @@ int main(void)
 {
 	int i;
 	int randomIndex;
-	char password[] = 11;
+	char password[11];
 	const char validChars[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	srand(time(NULL));
 
