@@ -12,27 +12,36 @@
  */
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r) {
-    int len1 = strlen(n1);
-    int len2 = strlen(n2);
-    int max_len = (len1 > len2) ? len1 : len2;
-    int carry = 0;
+    int len1;
+    int len2;
+    int max_len;
+    int carry;
+    int i;
+    int j;
+    int k;
+    int digit, digit1, digit2;
+    int sum;
+    int left, right;
+    char temp;
+    len1 = strlen(n1);
+    len2 = strlen(n2);
+    max_len = (len1 > len2) ? len1 : len2;
 
-    // Check if the result can fit in the buffer
     if (max_len >= size_r - 1) {
         return 0;
     }
 
-    int i = len1 - 1;
-    int j = len2 - 1;
-    int k = 0;
+    i = len1 - 1;
+    j = len2 - 1;
+    k = 0;
 
     while (i >= 0 || j >= 0 || carry > 0) {
-        int digit1 = (i >= 0) ? n1[i] - '0' : 0;
-        int digit2 = (j >= 0) ? n2[j] - '0' : 0;
+        digit1 = (i >= 0) ? n1[i] - '0' : 0;
+        digit2 = (j >= 0) ? n2[j] - '0' : 0;
 
-        int sum = digit1 + digit2 + carry;
+        sum = digit1 + digit2 + carry;
         carry = sum / 10;
-        int digit = sum % 10;
+        digit = sum % 10;
 
         r[k] = digit + '0';
 
@@ -43,11 +52,10 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r) {
 
     r[k] = '\0';
 
-    // Reverse the result in the buffer
-    int left = 0;
-    int right = k - 1;
+    left = 0;
+    right = k - 1;
     while (left < right) {
-        char temp = r[left];
+        temp = r[left];
         r[left] = r[right];
         r[right] = temp;
         left++;

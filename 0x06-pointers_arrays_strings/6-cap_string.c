@@ -1,33 +1,30 @@
 #include "main.h"
-#include <ctype.h>
-#include <string.h>
 
 /**
- * string_toupper - change all lowercase to uppercase
+ * cap_string - capitalize first letter of each word
  * @str: the string
  * Return: the new string
  */
 
 char *cap_string(char *str)
 {
-	int len;
-	int i;
-	int capitalize_next = 1;
+	int i = 0;
 
-	len = strlen(str);
+	if (str[i] >= 'a' && str[i] <= 'z')
+		str[i] = str[i] - 'a' + 'A';
+	i++;
 
-       	for (i = 0; i < len; i++)
+	while (str[i] != '\0')
 	{
-		if (isspace(str[i]) || ispunct(str[i]))
-		{
-			capitalize_next = 1;
-		}
-		else if (capitalize_next)
-		{
-			str[i] = toupper(str[i]);
-			capitalize_next = 0;
-		}
+		if ((str[i] >= 'a' && str[i] <= 'z')
+		    && (str[i - 1] == ',' || str[i - 1] == ';' || str[i - 1] == '.' ||
+			str[i - 1] == '!' || str[i - 1] == '?' || str[i - 1] == '"' ||
+			str[i - 1] == '(' || str[i - 1] == ')' || str[i - 1] == '{' ||
+			str[i - 1] == '}' || str[i - 1] == ' ' || str[i - 1] == '\t'
+			|| str[i - 1] == '\n'))
+			str[i] = str[i] - 'a' + 'A';
+		i++;
 	}
 
-	return str;
+	return (str);
 }
