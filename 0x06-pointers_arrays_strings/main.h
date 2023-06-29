@@ -33,10 +33,10 @@ char *string_toupper(char *str);
 
 /* function that capitalizes all words of a string */
 
-char *cap_string(char *);
+char *cap_string(char *str);
 
 /* function that encodes a string */
 
-char *leet(char *);
+char *leet(char *str);
 
 #endif /* MAIN_H */
