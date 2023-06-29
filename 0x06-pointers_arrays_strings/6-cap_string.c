@@ -12,8 +12,9 @@ char *cap_string(char *str)
 {
 	int len;
 	int i;
-	len = strlen(str);
 	int capitalize_next = 1;
+
+	len = strlen(str);
 
        	for (i = 0; i < len; i++)
 	{
