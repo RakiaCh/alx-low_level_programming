@@ -1,5 +1,6 @@
 #include "main.h"
 #include <ctype.h>
+#include <string.h>
 
 /**
  * string_toupper - change all lowercase to uppercase
@@ -9,25 +10,21 @@
 
 char *cap_string(char *str)
 {
-	int i = 0;
+	int len = strlen(str);
+	int capitalize_next = 1;
 
-	char ch;
-
-	while (str[i] != '\0')
+       	for (int i = 0; i < len; i++)
 	{
-		if ((str[i] >= 'a' && str[i] <= 'z')
-		    && (str[i - 1] == ',' || str[i - 1] == ';' || str[i - 1] == '.' ||
-			str[i - 1] == '!' || str[i - 1] == '?' || str[i - 1] == '"' ||
-			str[i - 1] == '(' || str[i - 1] == ')' || str[i - 1] == '{' ||
-			str[i - 1] == '}' || str[i - 1] == ' ' || str[i - 1] == '\t'
-			|| str[i - 1] == '\n'))
+		if (isspace(str[i]) || ispunct(str[i]))
 		{
-			ch = str[i];
-			str[i] = toupper(ch);
+			capitalize_next = 1;
 		}
-
-		i++;
+		else if (capitalize_next)
+		{
+			str[i] = toupper(str[i]);
+			capitalize_next = 0;
+		}
 	}
 
-	return (str);
+	return str;
 }
