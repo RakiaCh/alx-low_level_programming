@@ -10,10 +10,12 @@
 
 char *cap_string(char *str)
 {
-	int len = strlen(str);
+	int len;
+	int i;
+	len = strlen(str);
 	int capitalize_next = 1;
 
-       	for (int i = 0; i < len; i++)
+       	for (i = 0; i < len; i++)
 	{
 		if (isspace(str[i]) || ispunct(str[i]))
 		{
