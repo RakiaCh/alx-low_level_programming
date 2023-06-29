@@ -12,9 +12,12 @@ char *string_toupper(char *str)
 {
 	int i = 0;
 
+	char ch = ' ' ;
+
 	while (str[i] != '\0')
 	{
-		toupper(str[i]);
+		ch = str[i];
+		str[i] = toupper(ch);
 		i++;
 	}
 
