@@ -11,7 +11,7 @@ char *string_toupper(char *str)
 {
 	int i = 0;
 
-	char ch = ' ' ;
+	char ch;
 
 	while (str[i] != '\0')
 	{
