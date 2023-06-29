@@ -2,8 +2,7 @@
 #include <ctype.h>
 
 /**
- * string_toupper - unction that changes all lowercase letters 
- * of a string to uppercase
+ * string_toupper - function that changes all lowercase ********************to uppercase
  * @str: the string
  * Return: the new string
  */
