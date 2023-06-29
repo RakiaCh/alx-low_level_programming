@@ -15,16 +15,18 @@ char *cap_string(char *str)
 
 	while (str[i] != '\0')
 	{
-		if ( str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '.' || str[i] == ',' || str[i] == ';' || str[i] == '!' || str[i] == '?' || str[i] == '(' || str[i] == ')' || str[i] == '{' || str[i] == '}' || str[i] == '"')
+		if ((str[i] >= 'a' && str[i] <= 'z')
+		    && (str[i - 1] == ',' || str[i - 1] == ';' || str[i - 1] == '.' ||
+			str[i - 1] == '!' || str[i - 1] == '?' || str[i - 1] == '"' ||
+			str[i - 1] == '(' || str[i - 1] == ')' || str[i - 1] == '{' ||
+			str[i - 1] == '}' || str[i - 1] == ' ' || str[i - 1] == '\t'
+			|| str[i - 1] == '\n'))
 		{
-			ch = str[i+1];
-			str[i+1] = toupper(ch);
-			i++;
+			ch = str[i];
+			str[i] = toupper(ch);
 		}
-		else
-		{
-			i++;
-		}
+
+		i++;
 	}
 
 	return (str);
