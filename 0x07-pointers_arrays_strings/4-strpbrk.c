@@ -10,8 +10,5 @@
 
 char *_strpbrk(char *s, char *accept)
 {
-	char *p;
-	p = strpbrk(s, accept);
-
-	return (p);
+	return (strpbrk(s, accept));
 }
