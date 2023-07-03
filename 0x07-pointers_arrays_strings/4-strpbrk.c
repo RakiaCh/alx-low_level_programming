@@ -2,10 +2,10 @@
 #include <string.h>
 
 /**
- * _strpbrk - a function that searches a string 
+ * _strpbrk - searches a string 
  * @s: the first string
  * @accept: the second string
- * Return: a pointer to the byte that matches or NULL
+ * Return: a pointer or NULL
  */
 
 char *_strpbrk(char *s, char *accept)
