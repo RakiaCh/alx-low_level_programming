@@ -3,8 +3,8 @@
 
 /**
  * _strpbrk - searches a string 
- * @s: the first string
- * @accept: the second string
+ * @s: first string
+ * @accept: second string
  * Return: a pointer or NULL
  */
 
