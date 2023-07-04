@@ -2,7 +2,7 @@
 #include <string.h>
 
 /**
- * _strpbrk - searches a string 
+ * _strpbrk - searches a string
  * @s: first string
  * @accept: second string
  * Return: a pointer or NULL
