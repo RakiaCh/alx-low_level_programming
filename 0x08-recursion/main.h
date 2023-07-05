@@ -39,4 +39,14 @@ int is_prime(int n, int divisor);
 
 int is_prime_number(int n);
 
+/* function that returns 1 if a string is a palindrome and 0 if not. */
+
+int compare(char *head, char *tail);
+
+int is_palindrome(char *s);
+
+/* unction that compares two strings and returns 1 if the strings can be considered identical, otherwise return 0 */
+
+int wildcmp(char *s1, char *s2);
+
 #endif /* MAIN_H */
