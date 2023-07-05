@@ -29,6 +29,8 @@ int _pow_recursion(int x, int y);
 
 /* function that returns the natural square root of a number. */
 
+int is_sqrt(int n, int i);
+
 int _sqrt_recursion(int n);
 
 /* function that returns 1 if the input integer is a prime number, otherwise return 0 */

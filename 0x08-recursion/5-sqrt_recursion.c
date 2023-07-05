@@ -1,5 +1,20 @@
 #include "main.h"
-#include <math.h>
+
+/**
+ * is_sqrt - helper function for _sqrt_recursion
+ * @n: input number
+ * @i: iterator
+ * Return: square root of number
+ */
+
+int is_sqrt(int n, int i)
+{
+	if (i * i > n)
+		return (-1);
+	if (i * i == n)
+		return (i);
+	return (isSqrt(n, i + 1));
+}
 
 /**
  * _sqrt_recursion - returns the natural square root of a number
@@ -9,12 +24,7 @@
 
 int _sqrt_recursion(int n)
 {
-	double result;
-	result = sqrt(n);
-
-	if (result == (int)result)
-		return ((int)result);
-	else
+	if (n < 0)
 		return (-1);
-
+	return (isSqrt(n, 1));
 }
