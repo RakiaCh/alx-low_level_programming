@@ -15,7 +15,7 @@ char **strtow(char *str)
 	int word_count = 0, in_word = 0;
 
 	if (str == NULL || *str == '\0')
-                return NULL;
+		return (NULL);
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
@@ -30,11 +30,11 @@ char **strtow(char *str)
 	}
 
 	if (word_count == 0)
-		return NULL;
+		return (NULL);
 
 	words = (char **)malloc((word_count + 1) * sizeof(char *));
 	if (words == NULL)
-		return NULL;
+		return (NULL);
 
 	i = 0;
 	j = 0;
@@ -54,7 +54,7 @@ char **strtow(char *str)
 			for (k = 0; k < word_count; k++)
 				free(words[k]);
 			free(words);
-			return NULL;
+			return (NULL);
 		}
 
 		for (j = 0; j < len; j++)
@@ -67,5 +67,5 @@ char **strtow(char *str)
 
 	words[word_count] = NULL;
 
-	return words;
+	return (words);
 }
