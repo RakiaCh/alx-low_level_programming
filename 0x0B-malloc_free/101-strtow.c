@@ -10,12 +10,12 @@
 
 char **strtow(char *str)
 {
+	if (str == NULL || *str == '\0')
+		return NULL;
+
 	int i, j, k, len;
 	char **words = NULL;
 	int word_count = 0, in_word = 0;
-
-	if (str == NULL || *str == '\0')
-		return NULL;
 
 	for (i = 0; str[i] != '\0'; i++) {
 		if (str[i] != ' ' && !in_word) {
@@ -26,19 +26,23 @@ char **strtow(char *str)
 		}
 	}
 
+	if (word_count == 0)
+		return NULL;
+
 	words = (char **)malloc((word_count + 1) * sizeof(char *));
 	if (words == NULL)
-		return (NULL);
+		return NULL;
 
 	i = 0;
 	j = 0;
 	in_word = 0;
 
-	for (k = 0; k <= word_count; k++) {
-		len = 0;
-		while (str[i] != ' ' && str[i] != '\0') {
-			len++;
+	for (k = 0; k < word_count; k++) {
+		while (str[i] == ' ')
 			i++;
+		len = 0;
+		while (str[i + len] != ' ' && str[i + len] != '\0') {
+			len++;
 		}
 
 		words[k] = (char *)malloc((len + 1) * sizeof(char));
@@ -46,21 +50,17 @@ char **strtow(char *str)
 			for (k = 0; k < word_count; k++)
 				free(words[k]);
 			free(words);
-			return (NULL);
+			return NULL;
 		}
 
-		j = 0;
-		while (j < len) {
-			words[k][j] = str[i - len + j];
-			j++;
+		for (j = 0; j < len; j++) {
+			words[k][j] = str[i];
+			i++;
 		}
 		words[k][j] = '\0';
-
-		while (str[i] == ' ')
-			i++;
 	}
 
 	words[word_count] = NULL;
 
-	return (words);
+	return words;
 }
