@@ -27,4 +27,12 @@ int **alloc_grid(int width, int height);
 
 void free_grid(int **grid, int height);
 
+/* function that concatenates all the arguments of your program. */
+
+char *argstostr(int ac, char **av);
+
+/* function that splits a string into words. */
+
+char **strtow(char *str);
+
 #endif /* MAIN_H */
