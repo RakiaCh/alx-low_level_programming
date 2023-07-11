@@ -10,12 +10,12 @@
 
 char **strtow(char *str)
 {
-	if (str == NULL || *str == '\0')
-		return NULL;
-
 	int i, j, k, len;
 	char **words = NULL;
 	int word_count = 0, in_word = 0;
+
+	if (str == NULL || *str == '\0')
+                return NULL;
 
 	for (i = 0; str[i] != '\0'; i++) {
 		if (str[i] != ' ' && !in_word) {
