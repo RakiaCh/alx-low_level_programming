@@ -11,7 +11,7 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int total_length = 0;
+	int total_length = 0, len = 0;
 	int i, j;
 	char *concat_str;
 	int index;
@@ -30,8 +30,9 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
+		len = strlen(av[i]);
 
-		for (j = 0; j < strlen(av[i]); j++)
+		for (j = 0; j < len; j++)
 		{
 			concat_str[index] = av[i][j];
 			index++;
