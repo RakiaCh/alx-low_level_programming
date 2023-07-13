@@ -14,7 +14,7 @@ bool is_valid_number(char *num)
 {
 	int i;
 	
-	for (int i = 0; num[i] != '\0'; i++)
+	for (i = 0; num[i] != '\0'; i++)
 	{
 		if (!isdigit(num[i]))
 			return (false);
