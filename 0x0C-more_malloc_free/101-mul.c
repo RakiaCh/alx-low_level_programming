@@ -29,13 +29,13 @@ bool is_valid_number(char *num)
 
 void multiply_numbers(char *num1, char *num2)
 {
-	long double n1;
-	long double n2;
-	long double result;
+	unsigned long n1;
+	unsigned long n2;
+	unsigned long result;
 	n1 = strtoull(num1, NULL, 10);
 	n2 = strtoull(num2, NULL, 10);
 	result = n1 * n2;
-	printf("Result: %g\n", result);
+	printf("Result: %lu\n", result);
 }
 
 /**
