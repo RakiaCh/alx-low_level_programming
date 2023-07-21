@@ -1,1 +1,1 @@
-Variadic functions
+Repository for C programming projects
