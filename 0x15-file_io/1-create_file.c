@@ -12,6 +12,9 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd;
 	int n_wrote;
+	int len;
+
+	len = strlen(text_content);
 
 	if (!filename)
 		return (-1);
@@ -26,8 +29,8 @@ int create_file(const char *filename, char *text_content)
 		return (1);
 	}
 
-	n_wrote = write(fd, text_content, strlen(text_content));
-	if (n_wrote == -1 || n_wrote != strlen(text_content))
+	n_wrote = write(fd, text_content, len);
+	if (n_wrote == -1 || n_wrote != len)
 	{
 		close(fd);
 		return (-1);
